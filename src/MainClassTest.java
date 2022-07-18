@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Locale;
+
 public class MainClassTest extends MainClass {
     @Test
     public void testGetLocalNumber() {
@@ -13,24 +15,31 @@ public class MainClassTest extends MainClass {
             }
         }
     }
+
     @Test
-    public void testGetClassNumber()  {
-        if (this.getClassNumber>45)
-        {
+    public void testGetClassNumber() {
+        if (this.getClassNumber > 45) {
             System.out.println("Getclassnumber>45");
 
-    }
-        else {
+        } else {
             System.out.println("False");
         }
     }
+
     @Test
-    public void testGetClassString () {
-        boolean result;
-        System.out.println(this.getClassString);
-         result=this.getClassString.equalsIgnoreCase("Hello");
-            System.out.println(result);
+    public void testGetClassString() {
+        if (this.getClassString.contains("Hello") == true) {
+            System.out.println("Its contains hello");
         }
-        
+            else if (this.getClassString.toLowerCase ().contains("vello")==true) {
+                System.out.println("Its contains hello");
+        }
+              else   {
+
+            Assert.fail("Its no contains hello");
+
+        }
     }
+}
+
 
